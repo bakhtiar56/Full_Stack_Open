@@ -2,22 +2,11 @@
 sequenceDiagram
     participant browser
     participant server
-
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note right of browser: The browser sends a POST request to the server address "new_note", containing the user input. 
-
-    activate server
-    server-->>browser: Status code 302, location: /exampleapp/notes
-    deactivate server
-
-     Note right of server: The server then creates a new note object and appends the user input to the "notes" array. Finally, the server responds to the browser with status code 302, instructing the browser to do a HTTP GET request to the address defined in the "location" part of the response header.
-
-    Note right of server: The server asks the browser to reload the page so that the browser can fetch the javascript from the server and execute the javascript code to fetch the newly updated notes.
     
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
     activate server
 
-    Note right of browser: The browser sends a GET request to the server at the address "notes"
+    Note right of browser: The browser sends a GET reqeuest to the server at the address "spa"
     server-->>browser: HTML document
     deactivate server
 
