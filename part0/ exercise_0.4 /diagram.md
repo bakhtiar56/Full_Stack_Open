@@ -10,9 +10,9 @@ sequenceDiagram
     server-->>browser: Status code 302, location: /exampleapp/notes
     deactivate server
 
-     Note right of server: The server then creates a new note object and appends the user input to the "notes" array. Finally, the server responds to the browser with status code 302, instructing the browser to do a HTTP GET request to the address defined in the "location" part of the response header.
+     Note left of server: The server then creates a new note object and appends the user input to the "notes" array. Finally, the server responds to the browser with status code 302, instructing the browser to do a HTTP GET request to the address defined in the "location" part of the response header.
 
-    Note right of server: The server asks the browser to reload the page so that the browser can fetch the javascript from the server and execute the javascript code to fetch the newly updated notes.
+    Note left of server: The server asks the browser to reload the page so that the browser can fetch the javascript from the server and execute the javascript code to fetch the newly updated notes.
     
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
@@ -21,7 +21,7 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
 
-    Note right of server: The server responds back to the browser by sending a HTML file of the webpage as text and status code 200.
+    Note left of server: The server responds back to the browser by sending a HTML file of the webpage as text and status code 200.
 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -31,7 +31,7 @@ sequenceDiagram
     server-->>browser: the css file
     deactivate server
 
-    Note right of server: The server then responds back to the browser by sending a CSS file of the webpage as text and status code 200.
+    Note left of server: The server then responds back to the browser by sending a CSS file of the webpage as text and status code 200.
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
@@ -40,7 +40,7 @@ sequenceDiagram
     server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of server: The server then responds back to the browser by sending a javascript file of the webpage as text and status code 200.
+    Note left of server: The server then responds back to the browser by sending a javascript file of the webpage as text and status code 200.
 
     Note right of browser: The browser starts executing the JavaScript code that contains a GET request to the address "data.json" and fetches the JSON from the server
 

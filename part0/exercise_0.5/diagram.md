@@ -10,7 +10,7 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
 
-    Note right of server: The server responds back to the browser by sending a HTML file of the webpage as text and status code 200.
+    Note left of server: The server responds back to the browser by sending a HTML file of the webpage as text and status code 200.
 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -20,7 +20,7 @@ sequenceDiagram
     server-->>browser: the css file
     deactivate server
 
-    Note right of server: The server then responds back to the browser by sending a CSS file of the webpage as text and status code 200.
+    Note left of server: The server then responds back to the browser by sending a CSS file of the webpage as text and status code 200.
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
     activate server
@@ -29,7 +29,7 @@ sequenceDiagram
     server-->>browser: the JavaScript file
     deactivate server
 
-    Note right of server: The server then responds back to the browser by sending a javascript file of the webpage as text and status code 200.
+    Note left of server: The server then responds back to the browser by sending a javascript file of the webpage as text and status code 200.
 
     Note right of browser: The browser starts executing the JavaScript code that contains a GET request to the address "data.json" and fetches the JSON from the server
 
