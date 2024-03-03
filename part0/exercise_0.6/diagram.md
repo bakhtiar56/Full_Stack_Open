@@ -12,7 +12,7 @@ sequenceDiagram
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate server
 
-    Note right of browser: Right after saving the new note to the "notes" array, the browser sends a POST request to the address "new_note_spa". The request specifies the content type as json so the server can appropriately handle the request. The request also contains the new note as json format.
+    Note right of browser: Right after saving the new note to the "notes" array, the browser sends a POST request to the address "new_note_spa". The request specifies the content type as json so the server can appropriately handle the request. The request also contains the new note as json format. The browser does not send any further requests to the server.
     server-->>browser: status code 201. Response: {"message":"note created"}
     deactivate server
 
